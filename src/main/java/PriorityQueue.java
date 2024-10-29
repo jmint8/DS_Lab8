@@ -8,13 +8,14 @@ public class PriorityQueue<T> extends Queue<T>
    public PriorityQueue(Comparator<T> comp)
    {
       compare = comp;
+      head = null;
    }
 
 
     //@Override
    public void push(T val)
    {
-       super.push(val); //right now this is just a normal Queue as it will do what its parent did.
+       
    }
 
 
