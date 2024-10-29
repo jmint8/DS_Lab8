@@ -14,68 +14,51 @@ public class Customer
       this.yearsWithCompany = yearsWithCompany;
       this.politeness = politeness;
    }
-
-
 /**
-   compares clients based on thier net worth
+   compares clients based on their net worth
 */
    public static class WorthComparator implements Comparator<Customer>
    {
-   
    /**
       See https://docs.oracle.com/javase/7/docs/api/java/util/Comparator.html#compare(T,%20T)
       for full description.
-   
    */
       public int compare(Customer c1, Customer c2)
       {
-            return 0;
+            return c1.netWorth - c2.netWorth;
       }
-   
    }
-
-
 /**
-   compares clients based on thier loyalty 
+   compares clients based on their loyalty 
 */
    public static class LoyaltyComparator implements Comparator<Customer>
    {
-   
    /**
       See https://docs.oracle.com/javase/7/docs/api/java/util/Comparator.html#compare(T,%20T)
       for full description.
-   
    */
       public int compare(Customer c1, Customer c2)
       {
-	  return 0;
+    	  return c1.yearsWithCompany - c2.yearsWithCompany;
       }
-   
    }
-
-
-
 /**
-   compares clients based on thier net worth.
+   compares clients based on their net worth.
    If there is a tie, politeness is used.
 */
    public static class WorthPoliteComparator implements Comparator<Customer>
    {
-   
    /**
       See https://docs.oracle.com/javase/7/docs/api/java/util/Comparator.html#compare(T,%20T)
       for full description.
-   
    */
       public int compare(Customer c1, Customer c2)
       {
-	  return 0;
+    	  if(c1.netWorth - c2.netWorth == 0)
+	  		{
+    		  return c1.yearsWithCompany - c2.yearsWithCompany;
+	  		}
+    	  return c1.netWorth - c2.netWorth;
       }
-   
    }
-	
-
-
-
-
 }
